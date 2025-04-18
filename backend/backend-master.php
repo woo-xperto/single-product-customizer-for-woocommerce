@@ -37,12 +37,20 @@ if( !class_exists( 'Sppcfw_backend_master' )){
 				(SPPCFW_DEV?time():SPPCFW_VERION),
 				1
 			);
+            $sppcfw_custom_message_saved = isset(SPPCFW_ADVANCED['custom_message_display_hook'])
+                ? trim(SPPCFW_ADVANCED['custom_message_display_hook'])
+                : '';
+            $sppcfw_variation_table_saved = isset(SPPCFW_ADVANCED['variation_table_display_hook'])
+                ? trim(SPPCFW_ADVANCED['variation_table_display_hook'])
+                : '';
 			wp_localize_script( 'sppcfw_backend-resource-js', 'sppcfw_settings',
 				array( 
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
 					'sppcfw_basic' => SPPCFW_BASIC,
 					'sppcfw_advanced' => SPPCFW_ADVANCED,
 					'sppcfw_wc_action_hooks'=>$sppcfw_available_hooks,
+                    'custom_message_display_hook_dashboard' => $sppcfw_custom_message_saved,
+                    'variation_table_display_hook_dashboard' => $sppcfw_variation_table_saved,
 				)
 			);
 			// Media Uploader.

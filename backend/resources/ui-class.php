@@ -880,13 +880,88 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 
 		public function plugin_page() {
 
-			echo '<div class="wrap">';
-			?>
-			<h1 style="font-size:32px;"> <?php esc_html_e("Single Product Customizer Settings", "single-product-customizer") ?> </h1>
-		<?php
-			$this->show_navigation();
-			$this->show_forms();
-			echo '</div>';
+            ?>
+
+            <div class="tab-container-sppcfw">
+                <div class="tab-sppcfw">
+                    <img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'images/logo.png'); ?>" alt="Site Logo" width="100%">
+                    <button style="padding: 8px" class="tablinks-sppcfw" onclick="opensppcfw(event, 'basic')" id="defaultOpen"><span class="dashicons dashicons-admin-generic"></span><?php esc_html_e(' Basic Settings', 'single-product-customizer'); ?></button>
+                    <button style="padding: 8px" class="tablinks-sppcfw" onclick="opensppcfw(event, 'advance')"><span class="dashicons dashicons-admin-settings"></span><?php esc_html_e(' Advance Settings', 'single-product-customizer'); ?></button>
+                    <button style="padding: 8px" class="tablinks-sppcfw" onclick="opensppcfw(event, 'support')"><span class="dashicons dashicons-admin-site"></span><?php esc_html_e(' Support', 'single-product-customizer'); ?></button>
+                </div>
+
+                <div id="basic" class="tabcontent-sppcfw active">
+                    <div class="metabox-holder">
+                        <div id="sppcfw_basic" class="group">
+                            <form method="post" action="options.php">
+                                <?php
+                                settings_fields('sppcfw_basic');
+                                do_settings_sections('sppcfw_basic');
+                                submit_button(null, 'primary', 'submit_sppcfw_basic');
+                                ?>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advance" class="tabcontent-sppcfw">
+                    <div class="metabox-holder">
+                        <div id="sppcfw_advanced" class="group">
+                            <form method="post" action="options.php">
+                                <?php
+                                settings_fields('sppcfw_advanced');
+                                do_settings_sections('sppcfw_advanced');
+                                submit_button(null, 'primary', 'submit_sppcfw_advanced');
+                                ?>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="support" class="tabcontent-sppcfw">
+                    <div class="grid-support">
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-admin-site-alt3"></span>
+                                <?php echo esc_html('Website:','variation-monster'); ?></strong>
+                            <a href="https://www.wooxperto.com/" target="_blank"><?php echo esc_html('wooxperto.com','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Visit our official website for live chat and more information, tutorials, and resources.','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-facebook-alt"></span><?php echo esc_html('Facebook:','single-product-customizer'); ?></strong>
+                            <a href="https://www.facebook.com/wooxpertollc" target="_blank"><?php echo esc_html('Follow us','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Join our community on Facebook for support, updates, and discussions.','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-whatsapp"></span> <?php echo esc_html('WhatsApp:','single-product-customizer'); ?></strong>
+                            <a href="https://wa.me/01926167151" target="_blank"><?php echo esc_html('Chat Now ','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Get instant support by chatting with us on WhatsApp. We’re here to help!','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-email-alt"></span> <?php echo esc_html('Email:','single-product-customizer'); ?></strong> <a href="mailto:support@wooxperto.com"><?php echo esc_html('support@wooxperto.com','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Feel free to reach out to us via email for any inquiries or support requests.','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-linkedin"></span> <?php echo esc_html('LinkedIn:','single-product-customizer'); ?></strong>
+                            <a href="https://www.linkedin.com/company/wooxpertollc/" target="_blank"><?php echo esc_html('Connect on LinkedIn','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Let’s connect on LinkedIn for networking, updates, and professional support.','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-twitter"></span> <?php echo esc_html('Twitter:','single-product-customizer'); ?></strong> <a href="https://x.com/wooxpertollc" target="_blank"><?php echo esc_html('Follow us','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Stay updated with the latest news and announcements by following us on Twitter.','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-youtube"></span> <?php echo esc_html('YouTube:','single-product-customizer'); ?></strong> <a href="https://www.youtube.com/@wooxpertollc" target="_blank"><?php echo esc_html('Subscribe','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('Check out our YouTube channel for video tutorials and product showcases.','single-product-customizer'); ?></p>
+                        </div>
+                        <div class="support-item">
+                            <strong><span class="dashicons dashicons-instagram"></span> <?php echo esc_html('Instagram:','single-product-customizer'); ?></strong>
+                            <a href="https://www.instagram.com/wooxpertollc" target="_blank"><?php echo esc_html('Follow us','single-product-customizer'); ?></a>
+                            <p><?php echo esc_html('See behind-the-scenes content and our latest updates on Instagram.','single-product-customizer'); ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
 		}
 
 		/**

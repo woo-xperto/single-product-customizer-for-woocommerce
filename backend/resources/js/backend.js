@@ -1,3 +1,36 @@
+function opensppcfw(evt, cityName) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tabcontent-sppcfw");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+
+    // Remove active class from all tab buttons
+    tablinks = document.getElementsByClassName("tablinks-sppcfw");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    // Show the current tab and add active class
+    document.getElementById(cityName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('defaultOpen').click();
+});
+
+jQuery(document).ready(function($) {
+    $('select[name="sppcfw_advanced[custom_message_display_hook]"]').val(sppcfw_settings.custom_message_display_hook_dashboard);
+});
+
+jQuery(document).ready(function($) {
+    $('select[name="sppcfw_advanced[variation_table_display_hook]"]').val(sppcfw_settings.variation_table_display_hook_dashboard);
+});
+
+
+
 jQuery(document).ready(function(){
     jQuery("#sppcfw_advanced_license form").on("submit",function(e){
         e.preventDefault();
