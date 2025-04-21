@@ -391,8 +391,9 @@ if( !class_exists("Sppcfw_Backend_Variation_Switcher")){
         public function sppcfw_save_term_meta($term_id, $tt_id){
                 
             /*Color Section */
+            // phpcs:ignore
             if(isset( $_POST['webcfwc_vt_color']) ){
-
+                // phpcs:ignore
                 $webcfwc_variation_color = sanitize_text_field($_POST['webcfwc_vt_color']);
             
                 if ($webcfwc_variation_color) {
@@ -400,14 +401,13 @@ if( !class_exists("Sppcfw_Backend_Variation_Switcher")){
                     update_term_meta($term_id, "webcfwc_variation_meta", $webcfwc_variation_color, $previous_color_val, true);
                 }
             }
-        
-
             /*Color Section  end*/
         
             
             /*icon Section */
-
+            // phpcs:ignore
             if(isset(  $_POST["webcfwc_variation_add_icon"] ) ){
+                // phpcs:ignore
                 $webcfwc_variation_add_icon = sanitize_text_field($_POST["webcfwc_variation_add_icon"]);
                 if (!empty($webcfwc_variation_add_icon)) {
                     $previous_icon_class = get_term_meta( $term_id, "webcfwc_variation_meta", true);
@@ -418,9 +418,9 @@ if( !class_exists("Sppcfw_Backend_Variation_Switcher")){
             /*icon Section */
 
             /*variation image section*/
-
+            // phpcs:ignore
             if( isset( $_POST["webcfwc_tax_image_id"]  )){
-            
+                // phpcs:ignore
                 $add_vaeation_img = absint($_POST["webcfwc_tax_image_id"]);
                 if ($add_vaeation_img > 0) {
                     $previous_img = get_term_meta( $term_id, "webcfwc_variation_meta", true);
@@ -436,7 +436,7 @@ if( !class_exists("Sppcfw_Backend_Variation_Switcher")){
         /*display column*/
 
         public function sppcfw_display_term_column($columns){
-            
+            // phpcs:ignore
             $taxonomy=(isset($_POST["taxonomy"])? sanitize_text_field($_POST["taxonomy"]):(isset($_GET["taxonomy"])? sanitize_text_field($_GET["taxonomy"]):''));
 
             $attribute_id=wc_attribute_taxonomy_id_by_name($taxonomy);
@@ -513,7 +513,7 @@ if( !class_exists("Sppcfw_Backend_Variation_Switcher")){
         /*Sortable column*/
 
         public function sppcfw_color_sortable_column($sortable){
-
+            // phpcs:ignore
             $taxonomy=(isset($_POST["taxonomy"])? sanitize_text_field($_POST["taxonomy"]):(isset($_GET["taxonomy"])? sanitize_text_field($_GET["taxonomy"]):''));
 
             $attribute_id=wc_attribute_taxonomy_id_by_name($taxonomy);

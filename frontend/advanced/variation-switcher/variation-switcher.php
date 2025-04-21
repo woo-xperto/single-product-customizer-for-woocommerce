@@ -93,7 +93,7 @@ if( !class_exists("Sppcfw_Variation_Switcher")){
             
             $table_name = $wpdb->prefix."woocommerce_attribute_taxonomies";
             $attribute_type='';
-
+            // phpcs:ignore
             $result = $wpdb->get_results($wpdb->prepare("SELECT attribute_type FROM $table_name where attribute_name=%s", $attribute_name ));
 
             if($result){

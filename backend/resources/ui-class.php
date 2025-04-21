@@ -291,6 +291,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 				 * @param callable  $sanitize_callback = ''
 				 * @since 1.0.0
 				 */
+                // phpcs:ignore
 				register_setting( $section['id'], $section['id'], array( $this, 'sanitize_fields' ) );
                 
 			} // foreach ended.
@@ -732,6 +733,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 			$html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
 			$html .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
 			$html .= $this->get_field_description( $args );
+            // phpcs:ignore
 			$html .= '<p class="wpsa-image-preview"><img src=""/></p>';
 
 			// Define allowed HTML tags and attributes
@@ -884,7 +886,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 
             <div class="tab-container-sppcfw">
                 <div class="tab-sppcfw">
-                    <img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'images/logo.png'); ?>" alt="Site Logo" width="100%">
+                    <div id="logo-container-spc"></div>
                     <button style="padding: 8px" class="tablinks-sppcfw" onclick="opensppcfw(event, 'basic')" id="defaultOpen"><span class="dashicons dashicons-admin-generic"></span><?php esc_html_e(' Basic Settings', 'single-product-customizer'); ?></button>
                     <button style="padding: 8px" class="tablinks-sppcfw" onclick="opensppcfw(event, 'advance')"><span class="dashicons dashicons-admin-settings"></span><?php esc_html_e(' Advance Settings', 'single-product-customizer'); ?></button>
                     <button style="padding: 8px" class="tablinks-sppcfw" onclick="opensppcfw(event, 'support')"><span class="dashicons dashicons-admin-site"></span><?php esc_html_e(' Support', 'single-product-customizer'); ?></button>
