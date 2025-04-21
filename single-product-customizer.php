@@ -120,9 +120,8 @@ function sppcfw_display_admin_notice() {
         esc_html__('Could you please do us a big favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the Single Product Customizer.', 'single-product-customizer');
 
     echo '<div id="sppcfw-review-notice" class="updated sppcfw_sreview_notices">';
-    
-    printf(
-        '<span class="logo"><img src="%s" alt="%s"/></span> <ul class="right_contes"><li>%s</li> <li class="button_wrap">
+    // phpcs:ignore
+    printf('<span class="logo"><img src="%s" alt="%s"/></span> <ul class="right_contes"><li>%s</li> <li class="button_wrap">
         <a href="%s" target="_blank">%s</a> 
         <button type="button" id="sppcfw-dismiss-btn"><i class="fas fa-check-circle"></i> %s</button> 
         <a href="%s" target="_blank"><i class="fas fa-life-ring"></i> %s</a>

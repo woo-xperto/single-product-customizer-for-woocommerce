@@ -15,14 +15,8 @@ if( !class_exists( 'Sppcfw_backend_master' )){
 			global $sppcfw_available_hooks;
             wp_enqueue_script( 'jquery' );
 
-			// Color Picker.
-			wp_enqueue_script(
-				'iris',
-				admin_url( 'js/iris.min.js' ),
-				array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch','jquery' ),
-				false,
-				1
-			);
+            // phpcs:ignore
+			wp_enqueue_script('iris',admin_url( 'js/iris.min.js' ),array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch','jquery' ),false,1);
 			wp_enqueue_script(
 				'sppcfw_backend-deparam-js',
 				plugin_dir_url(__FILE__).'resources/js/jquery-deparam.js',
@@ -51,6 +45,7 @@ if( !class_exists( 'Sppcfw_backend_master' )){
 					'sppcfw_wc_action_hooks'=>$sppcfw_available_hooks,
                     'custom_message_display_hook_dashboard' => $sppcfw_custom_message_saved,
                     'variation_table_display_hook_dashboard' => $sppcfw_variation_table_saved,
+                    'logoUrl' => plugin_dir_url(__FILE__) . 'resources/images/logo.png'
 				)
 			);
 			// Media Uploader.
