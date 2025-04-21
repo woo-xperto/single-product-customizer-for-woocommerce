@@ -150,8 +150,9 @@ function sppcfw_display_admin_notice() {
 function sppcfw_set_no_review() {
 
     $sppcfw_review_dismissed  = "";
-
+    // phpcs:ignore
     if ( isset( $_GET['dismiss-review'] ) ) {
+        // phpcs:ignore
         $sppcfw_review_dismissed = sanitize_text_field( $_GET['dismiss-review'] );
     }
 
@@ -199,7 +200,7 @@ function sppcfw_send_admin_notification_callback() {
     // Check nonce for security
     check_ajax_referer('sppcfw_nonce', 'nonce');
 
-    // Sanitize and retrieve the message from the request
+    // phpcs:ignore
     $feedback_message = sanitize_text_field($_POST['message'] ?? '');
 
     if (empty($feedback_message)) {

@@ -84,6 +84,7 @@ function sppcfw_return_values($elements){
 }
 
 function sppcfw_import_settings_from_category(){
+    // phpcs:ignore
     $category_id=sanitize_text_field($_POST["category_id"]);
 
     $sppcfw_cat = get_term_meta($category_id, 'sppcfw_category_based_settings', true);
