@@ -25,12 +25,34 @@ if( !class_exists("Sppcfw_Frontend_Enable_Plus_Minus_Button")){
         }
 
         public function sppcfw_add_minus_button(){
+            global $product;
+
+            if ($product && $product->is_sold_individually()) {
+                return true;
+            }
+
+            // Exit if stock quantity is exactly 1
+            if ($product && $product->get_stock_quantity() === 1) {
+                return true;
+            }
+
             if(sppcfw_is_singular() && $this->is_enabled()===1){
                 echo '<button type="button" class="button sppcfw_minus_button">-</button>';
             }
         }
 
         public function sppcfw_add_plus_button(){
+            global $product;
+
+            if ($product && $product->is_sold_individually()) {
+                return true;
+            }
+
+            // Exit if stock quantity is exactly 1
+            if ($product && $product->get_stock_quantity() === 1) {
+                return true;
+            }
+
             if(sppcfw_is_singular() && $this->is_enabled()===1){
                 echo '<button type="button" class="button sppcfw_plus_button">+</button>';
             }
