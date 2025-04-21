@@ -1,53 +1,56 @@
 .webcfwc_btn_disable {
-    opacity: 0.3;
-    position: relative;
-    pointer-events: none;
-    
-  }
-  .webcfwc_btn_disable:hover {
-    opacity: 1;
-  }
-  .webcfwc_btn_disable:before, .webcfwc_btn_disable:after {
-    position: absolute;
-    left: 18px;
-    content: ' ';
-    height: 35px;
-    width: 2px;
-    background-color: #ff0808;
-    top: 0px;
-  }
-  .webcfwc_btn_disable:before {
-    transform: rotate(45deg);
-  }
-  .webcfwc_btn_disable:after {
-    transform: rotate(-45deg);
-  }
+  opacity: 0.3;
+  position: relative;
+  pointer-events: none;
 
-
-  .webfwc_variation_button.selected::before{
-    content: ' ';
-    display: inline-block;
-    transform: rotate(45deg) translateY(5px);
-    height: 25px;
-    width: 8px;
-    border-bottom: 2px solid #78b13f;
-    border-right: 2px solid #78b13f;
-    position: absolute;
-    top: 0;
-    right: 10px;
-  }
-  button.webfwc_variation_button.circle_button {
-    border-radius: 50%!important;
-    box-shadow: 0 0 0 1px #ababab;
-    border: 2px solid #fff!important;
 }
-  button.webfwc_variation_button {
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px #ababab;
-    border: 2px solid #fff!important;
-    padding: 5px 10px;
-    position: relative;
-    overflow: hidden;
+.webcfwc_btn_disable:hover {
+  opacity: 1;
+}
+.webcfwc_btn_disable:before, .webcfwc_btn_disable:after {
+  position: absolute;
+  /*left: 18px;*/
+  content: '\2573';
+  height: 27px;
+  width: 6px;
+  color: #ff0808;
+  /*background-color: #ff0808;*/
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+/*.webcfwc_btn_disable:before {*/
+/*  transform: rotate(45deg);*/
+/*}*/
+/*.webcfwc_btn_disable:after {*/
+/*  transform: rotate(-45deg);*/
+/*}*/
+
+
+.webfwc_variation_button.selected::before{
+  content: ' ';
+  display: inline-block;
+  transform: rotate(45deg) translate(-50%, -50%);
+  height: 25px;
+  width: 8px;
+  border-bottom: 2px solid #78b13f;
+  border-right: 2px solid #78b13f;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+button.webfwc_variation_button.circle_button {
+  border-radius: 50%!important;
+  box-shadow: 0 0 0 1px #ababab;
+  border: 2px solid #fff!important;
+}
+button.webfwc_variation_button {
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #ababab;
+  border: 2px solid #fff!important;
+  padding: 5px 10px;
+  position: relative;
+  overflow: hidden;
 }
 button.webfwc_variation_button {
   border-radius: 5px;
