@@ -63,21 +63,6 @@ if( !class_exists( 'Sppcfw_backend_master' )){
 				(SPPCFW_DEV?time():SPPCFW_VERION),
 				'all'
 			);
-			global $post;
-			$taxonomy='';
-			if(isset($_GET['taxonomy'])){
-				$taxonomy = sanitize_text_field($_GET['taxonomy']);
-				
-			}
-			if ( $hook === 'post-new.php' || $hook === 'post.php' || $hook==='edit-tags.php' || $hook==='term.php') {
-			
-				if ( (isset( $post->post_type ) &&  $post->post_type === 'product') || $taxonomy==='product_cat' ) {
-					if ( function_exists( 'wp_enqueue_editor' ) ) {
-						wp_enqueue_editor();
-					}
-				}
-			}
-
         }
 
     } // Sppcfw_backend_master class end
