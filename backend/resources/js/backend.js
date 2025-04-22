@@ -18,7 +18,9 @@ function opensppcfw(evt, cityName) {
     evt.currentTarget.classList.add("active");
 }
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('defaultOpen').click();
+    if (document.getElementById('defaultOpen')){
+        document.getElementById('defaultOpen').click();
+    }
 });
 
 jQuery(document).ready(function($) {
@@ -37,7 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     img.style.width = "100%";
 
     // Append it wherever you want, e.g., inside a div with ID "logo-container"
-    document.getElementById('logo-container-spc').appendChild(img);
+    if (document.getElementById('logo-container-spc')){
+        document.getElementById('logo-container-spc').appendChild(img);
+    }
 });
 
 
