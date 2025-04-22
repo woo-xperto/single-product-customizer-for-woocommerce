@@ -153,7 +153,7 @@ div#sppcfw_single_product_additional_content_main {
     left: 0;
     width: 99%;
   }
-  .group .form-table input.color-picker {
+  .sppcfw-group .form-table input.sppcfw-color-picker {
     max-width: 100px;
   }
 
@@ -310,7 +310,7 @@ div#sppcfw_single_product_additional_content_main {
   line-height: 1.5;
 }
 
-.tabcontent-sppcfw.active .group {
+.tabcontent-sppcfw.active .sppcfw-group {
   display: block !important;
 }
 #submit_sppcfw_advanced, #submit_sppcfw_basic{
