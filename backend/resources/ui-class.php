@@ -1030,7 +1030,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 			<div class="metabox-holder">
 				<?php foreach ( $this->sections_array as $form ) { ?>
 					<!-- style="display: none;" -->
-					<div id="<?php echo esc_attr($form['id']); ?>" class="group" >
+					<div id="<?php echo esc_attr($form['id']); ?>" class="sppcfw-group" >
 						<form method="post" action="options.php">
 							<?php
 							do_action( 'sppcfw_wsa_form_top_' . $form['id'], $form );
