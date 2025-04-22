@@ -798,7 +798,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'], $args['placeholder'] ) );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 
-			$html  = sprintf( '<input type="text" class="%1$s-text color-picker" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" placeholder="%6$s" />', $size, $args['section'], $args['id'], $value, $args['std'], $args['placeholder'] );
+			$html  = sprintf( '<input type="text" class="%1$s-text sppcfw-color-picker" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" placeholder="%6$s" />', $size, $args['section'], $args['id'], $value, $args['std'], $args['placeholder'] );
 			$html .= $this->get_field_description( $args );
 
 			// Define allowed HTML tags and attributes
@@ -894,7 +894,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 
                 <div id="basic" class="tabcontent-sppcfw active">
                     <div class="metabox-holder">
-                        <div id="sppcfw_basic" class="group">
+                        <div id="sppcfw_basic" class="sppcfw-group">
                             <form method="post" action="options.php">
                                 <?php
                                 settings_fields('sppcfw_basic');
@@ -908,7 +908,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 
                 <div id="advance" class="tabcontent-sppcfw">
                     <div class="metabox-holder">
-                        <div id="sppcfw_advanced" class="group">
+                        <div id="sppcfw_advanced" class="sppcfw-group">
                             <form method="post" action="options.php">
                                 <?php
                                 settings_fields('sppcfw_advanced');
