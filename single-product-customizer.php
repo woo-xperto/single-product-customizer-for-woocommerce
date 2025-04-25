@@ -28,6 +28,24 @@ function sppcfw_plugin_action_links( $links ) {
     return array_merge( $action_links, $links );
 }
 
+add_filter('plugin_row_meta', 'sppcfw_plugin_support_link', 10, 2);
+
+/**
+ * Add a support link to the plugin details.
+ *
+ * @param $links, $file
+ * @since 1.0.0
+ */
+function sppcfw_plugin_support_link($links, $file) {
+    if ($file === plugin_basename(__FILE__)) {
+        $support_link = '<a href="https://wa.me/01926167151" target="_blank" style="color: #0073aa;">' . __('Support', 'variation-monster') . '</a>';
+        $dock_link    = '<a href="https://www.wooxperto.com/docs/single-product-customizer-for-woocommerce/" target="_blank" style="color: #0073aa;">' . __('Docs', 'variation-monster') . '</a>';
+        $links[] = $support_link;
+        $links[] = $dock_link;
+    }
+    return $links;
+}
+
 define("SPPCFW_DEV", 1);
 define("SPPCFW_VERION", '1.0.0');
 define("SPPCFW_DIR_URL", plugin_dir_url(__FILE__) );
@@ -79,20 +97,21 @@ function sppcfw_plugin_redirect() {
     }
 }
 
-/*
+/**
 * Check date on admin initiation and add to admin notice if it was over 10 days ago.
 *
 * @link   https://www.winwar.co.uk/2014/10/ask-wordpress-plugin-reviews-week/?utm_source=codesnippet
 *
-* @return null
+* @return void
 */
 function sppcfw_check_installation_date() {
  
-    $install_date = get_option( 'sppcfw_myplugin_activation_date' );
-    $review_dismissed  = get_option( 'sppcfw_review_dismissed' );
-    $past_date = strtotime( '-7 days' );
+    $install_date     = get_option( 'sppcfw_myplugin_activation_date' );
+    $review_dismissed = get_option( 'sppcfw_review_dismissed' );
+    $past_date        = strtotime( '-7 days' );
+
     if ( $past_date == $install_date && !$review_dismissed ) {
- 
+
         add_action( 'admin_notices', 'sppcfw_display_admin_notice' );
  
     }
@@ -110,20 +129,20 @@ add_action( 'admin_init', 'sppcfw_check_installation_date' );
 function sppcfw_display_admin_notice() {
 
     // Review URL - Change to the URL of your plugin on WordPress.org
-    $review_url = esc_url('http://wordpress.org/');
-    $dismiss_url = esc_url(get_admin_url() . '?dismiss-review=1');
+    $review_url = esc_url('https://wordpress.org/plugins/single-product-customizer/');
+    $dismiss_url = esc_url('https://www.wooxperto.com/single-product-page-customizer/');
     // Plugin image URL
-    $logo_url = esc_url(plugin_dir_url(__FILE__) . 'backend/resources/images/logo.webp');
+    $logo_url = esc_url(plugin_dir_url(__FILE__) . 'backend/resources/images/logo.png');
 
     // Escaping message for proper display with a line break
-    $message = esc_html__('Hello! Seems like you have used Single Product Customizer for this website — Thanks a lot!', 'single-product-customizer') . '<br>' .
-        esc_html__('Could you please do us a big favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the Single Product Customizer.', 'single-product-customizer');
+    $message = esc_html__('Hello! Seems like you have used Single Product Customizer for this website — Thanks a lot!', 'single-product-customizer') .
+        esc_html__(' Could you please do us a big favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the Single Product Customizer.', 'single-product-customizer');
 
     echo '<div id="sppcfw-review-notice" class="updated sppcfw_sreview_notices">';
     // phpcs:ignore
     printf('<span class="logo"><img src="%s" alt="%s"/></span> <ul class="right_contes"><li>%s</li> <li class="button_wrap">
-        <a href="%s" target="_blank">%s</a> 
-        <button type="button" id="sppcfw-dismiss-btn"><i class="fas fa-check-circle"></i> %s</button> 
+        <a href="%s" id="sppcfw-dismiss-btn" target="_blank">%s</a> 
+        <button type="button" id="sppcfw-dismiss-btn-already-did"><i class="fas fa-check-circle"></i> %s</button> 
         <a href="%s" target="_blank"><i class="fas fa-life-ring"></i> %s</a>
         <button type="button" id="sppcfw-not-good-enough-btn"><i class="fas fa-thumbs-down"></i> %s</button>',
         esc_attr($logo_url),
