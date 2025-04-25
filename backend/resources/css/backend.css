@@ -161,14 +161,14 @@ div#sppcfw_single_product_additional_content_main {
 
   .wrap .sppcfw_sreview_notices {
     padding: 7px 20px;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     gap: 10px;
   }
 
   .sppcfw_sreview_notices span.logo {
     display: inline-block;
-    width: 150px;
+    /*width: 150px;*/
   }
 
   .sppcfw_sreview_notices span.logo > img {
@@ -177,6 +177,9 @@ div#sppcfw_single_product_additional_content_main {
   .right_contes li:first-child{
     font-size: 15px;
     line-height: 1.5;
+  }
+  .right_contes{
+    margin-top: 0;
   }
   .sppcfw_sreview_notices li.button_wrap{
     display: flex;

@@ -7,6 +7,25 @@ jQuery(document).ready(function($) {
         };
 
         const ajaxURL = sppcfw_obj.ajax_url;
+        $(this).prop('disabled', true).text('Processing...');
+
+        $.post(ajaxURL, data, function(response) {
+            if (response.success) {
+                $('#sppcfw-review-notice').hide(); // Hide the review notice
+            } else {
+                console.log(response.data);
+            }
+        });
+    });
+
+    $('#sppcfw-dismiss-btn-already-did').on('click', function() {
+        const data = {
+            action: 'sppcfw_dismiss_review_notice',
+            nonce: sppcfw_obj.nonce
+        };
+
+        const ajaxURL = sppcfw_obj.ajax_url;
+        $(this).prop('disabled', true).text('Processing...');
 
         $.post(ajaxURL, data, function(response) {
             if (response.success) {
@@ -33,7 +52,7 @@ jQuery(document).ready(function($) {
         // Perform the AJAX request
         $.post(ajaxURL, data, function (response) {
             if (response.success) {
-                alert('Your feedback has been sent to the admin. Thank you for your input.');
+                alert('Your feedback has been sent to the plugin owner. Thank you for your input.');
             } else {
                 alert('An error occurred while sending feedback. Please try again.');
             }
