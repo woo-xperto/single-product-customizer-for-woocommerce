@@ -28,6 +28,24 @@ function sppcfw_plugin_action_links( $links ) {
     return array_merge( $action_links, $links );
 }
 
+add_filter('plugin_row_meta', 'sppcfw_plugin_support_link', 10, 2);
+
+/**
+ * Add a support link to the plugin details.
+ *
+ * @param $links, $file
+ * @since 1.0.0
+ */
+function sppcfw_plugin_support_link($links, $file) {
+    if ($file === plugin_basename(__FILE__)) {
+        $support_link = '<a href="https://wa.me/01926167151" target="_blank" style="color: #0073aa;">' . __('Support', 'variation-monster') . '</a>';
+        $dock_link    = '<a href="https://www.wooxperto.com/docs/single-product-customizer-for-woocommerce/" target="_blank" style="color: #0073aa;">' . __('Docs', 'variation-monster') . '</a>';
+        $links[] = $support_link;
+        $links[] = $dock_link;
+    }
+    return $links;
+}
+
 define("SPPCFW_DEV", 1);
 define("SPPCFW_VERION", '1.0.0');
 define("SPPCFW_DIR_URL", plugin_dir_url(__FILE__) );
