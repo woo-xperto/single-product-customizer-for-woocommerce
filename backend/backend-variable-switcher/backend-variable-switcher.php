@@ -9,7 +9,7 @@ if( !class_exists("Sppcfw_Backend_Variation_Switcher")){
                 if( $sppcfw_variation_check == "on" && SPPCFW_PRO_ACTIVE){
 
                     add_filter("product_attributes_type_selector",[$this,"sppcfw_custom_attributes_form"], 100,1);
-                    add_action("admin_init",[$this,"sppcfw_attributes_all_hooks"]);
+                    add_action("admin_footer",[$this,"sppcfw_attributes_all_hooks"]);
 
                     add_action("woocommerce_product_option_terms",[$this,"sppcfw_load_custom_type_options_meta"],100,3);
 
