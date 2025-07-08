@@ -38,8 +38,8 @@ add_filter('plugin_row_meta', 'sppcfw_plugin_support_link', 10, 2);
  */
 function sppcfw_plugin_support_link($links, $file) {
     if ($file === plugin_basename(__FILE__)) {
-        $support_link = '<a href="https://wa.me/01926167151" target="_blank" style="color: #0073aa;">' . __('Support', 'variation-monster') . '</a>';
-        $dock_link    = '<a href="https://www.wooxperto.com/docs/single-product-customizer-for-woocommerce/" target="_blank" style="color: #0073aa;">' . __('Docs', 'variation-monster') . '</a>';
+        $support_link = '<a href="https://wa.me/01926167151" target="_blank" style="color: #0073aa;">' . __('Support', 'single-product-customizer') . '</a>';
+        $dock_link    = '<a href="https://www.wooxperto.com/docs/single-product-customizer-for-woocommerce/" target="_blank" style="color: #0073aa;">' . __('Docs', 'single-product-customizer') . '</a>';
         $links[] = $support_link;
         $links[] = $dock_link;
     }
