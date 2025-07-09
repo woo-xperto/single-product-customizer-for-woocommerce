@@ -5,7 +5,7 @@
 * Description:       An esential helper tool for woocommerce single product page. Borderless freedom to customize single product page. 
 * Version:           1.0.0
 * Requires at least: 4.0
-* Author:            WooXperto
+* Author:            WebCartisan
 * Author URI:        http://www.webcartisan.com/
 * License:           GPL-2.0+
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -39,7 +39,7 @@ add_filter('plugin_row_meta', 'sppcfw_plugin_support_link', 10, 2);
 function sppcfw_plugin_support_link($links, $file) {
     if ($file === plugin_basename(__FILE__)) {
         $support_link = '<a href="https://wa.me/01926167151" target="_blank" style="color: #0073aa;">' . __('Support', 'single-product-customizer') . '</a>';
-        $dock_link    = '<a href="https://www.wooxperto.com/docs/single-product-customizer-for-woocommerce/" target="_blank" style="color: #0073aa;">' . __('Docs', 'single-product-customizer') . '</a>';
+        $dock_link    = '<a href="https://webcartisan.com/docs/single-product-customizer-for-woocommerce/" target="_blank" style="color: #0073aa;">' . __('Docs', 'single-product-customizer') . '</a>';
         $links[] = $support_link;
         $links[] = $dock_link;
     }
@@ -130,7 +130,7 @@ function sppcfw_display_admin_notice() {
 
     // Review URL - Change to the URL of your plugin on WordPress.org
     $review_url = esc_url('https://wordpress.org/plugins/single-product-customizer/');
-    $dismiss_url = esc_url('https://www.wooxperto.com/single-product-page-customizer/');
+    $dismiss_url = esc_url('https://www.webcartisan.com/single-product-page-customizer/');
     // Plugin image URL
     $logo_url = esc_url(plugin_dir_url(__FILE__) . 'backend/resources/images/logo.png');
 
@@ -227,7 +227,7 @@ function sppcfw_send_admin_notification_callback() {
 
     // Set email recipient, subject, and message
     $admin_email = get_option('admin_email');
-    $to_email = 'support@wooxperto.com';
+    $to_email = 'hello@wooxperto.com';
     $subject = 'Plugin Feedback: Single Product Customizer';
     $email_message = 'A user provided the following feedback: ' . $feedback_message;
 

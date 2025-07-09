@@ -925,7 +925,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
                         <div class="support-item">
                             <strong><span class="dashicons dashicons-admin-site-alt3"></span>
                                 <?php esc_html_e('Website:','single-product-customizer'); ?></strong>
-                            <a href="https://www.wooxperto.com/" target="_blank"><?php esc_html_e('wooxperto.com','single-product-customizer'); ?></a>
+                            <a href="https://www.webcartisan.com/" target="_blank"><?php esc_html_e('webcartisan.com','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Visit our official website for live chat and more information, tutorials, and resources.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
@@ -939,7 +939,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
                             <p><?php esc_html_e('Get instant support by chatting with us on WhatsApp. We’re here to help!','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
-                            <strong><span class="dashicons dashicons-email-alt"></span> <?php esc_html_e('Email:','single-product-customizer'); ?></strong> <a href="mailto:support@wooxperto.com"><?php esc_html_e('support@wooxperto.com','single-product-customizer'); ?></a>
+                            <strong><span class="dashicons dashicons-email-alt"></span> <?php esc_html_e('Email:','single-product-customizer'); ?></strong> <a href="mailto:hello@wooxperto.com"><?php esc_html_e('hello@wooxperto.com','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Feel free to reach out to us via email for any inquiries or support requests.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
@@ -976,11 +976,11 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
 		
 			foreach ( $this->sections_array as $tab ) {
 				if ( $tab['id'] === 'sppcfw_advanced_get_pro' ) {
-					$html .= '<button type="button" class="nav-tab custom-button" onclick="generate_custom_link(this)" data-url="https://www.wooxperto.com/single-product-page-customizer/">' 
+					$html .= '<button type="button" class="nav-tab custom-button" onclick="generate_custom_link(this)" data-url="https://www.webcartisan.com/single-product-page-customizer/">'
 						   . esc_html( $tab['title'] ) 
 						   . '<span style="color: red;"> *</span></button>';
 				} elseif ( $tab['id'] === 'sppcfw_advanced_get_support' ) {
-					$html .= '<button type="button" class="nav-tab custom-button" onclick="generate_custom_link(this)" data-url="https://www.wooxperto.com/">' 
+					$html .= '<button type="button" class="nav-tab custom-button" onclick="generate_custom_link(this)" data-url="https://www.webcartisan.com/">'
 						   . esc_html( $tab['title'] ) 
 						   . '</button>';
 				} else {
