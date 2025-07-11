@@ -930,7 +930,7 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
                         </div>
                         <div class="support-item">
                             <strong><span class="dashicons dashicons-facebook-alt"></span><?php esc_html_e('Facebook:','single-product-customizer'); ?></strong>
-                            <a href="https://www.facebook.com/wooxpertollc" target="_blank"><?php esc_html_e('Follow us','single-product-customizer'); ?></a>
+                            <a href="https://www.facebook.com/webcartisan" target="_blank"><?php esc_html_e('Follow us','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Join our community on Facebook for support, updates, and discussions.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
@@ -939,25 +939,25 @@ if ( ! class_exists( 'SPPCFW_backend_ui' ) ) :
                             <p><?php esc_html_e('Get instant support by chatting with us on WhatsApp. We’re here to help!','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
-                            <strong><span class="dashicons dashicons-email-alt"></span> <?php esc_html_e('Email:','single-product-customizer'); ?></strong> <a href="mailto:hello@wooxperto.com"><?php esc_html_e('hello@wooxperto.com','single-product-customizer'); ?></a>
+                            <strong><span class="dashicons dashicons-email-alt"></span> <?php esc_html_e('Email:','single-product-customizer'); ?></strong> <a href="mailto:hello@webcartisan.com"><?php esc_html_e('hello@webcartisan.com','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Feel free to reach out to us via email for any inquiries or support requests.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
                             <strong><span class="dashicons dashicons-linkedin"></span> <?php esc_html_e('LinkedIn:','single-product-customizer'); ?></strong>
-                            <a href="https://www.linkedin.com/company/wooxpertollc/" target="_blank"><?php esc_html_e('Connect on LinkedIn','single-product-customizer'); ?></a>
+                            <a href="https://www.linkedin.com/company/webcartisan" target="_blank"><?php esc_html_e('Connect on LinkedIn','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Let’s connect on LinkedIn for networking, updates, and professional support.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
-                            <strong><span class="dashicons dashicons-twitter"></span> <?php esc_html_e('Twitter:','single-product-customizer'); ?></strong> <a href="https://x.com/wooxpertollc" target="_blank"><?php esc_html_e('Follow us','single-product-customizer'); ?></a>
+                            <strong><span class="dashicons dashicons-twitter"></span> <?php esc_html_e('Twitter:','single-product-customizer'); ?></strong> <a href="https://x.com/WebCartisan" target="_blank"><?php esc_html_e('Follow us','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Stay updated with the latest news and announcements by following us on Twitter.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
-                            <strong><span class="dashicons dashicons-youtube"></span> <?php esc_html_e('YouTube:','single-product-customizer'); ?></strong> <a href="https://www.youtube.com/@wooxpertollc" target="_blank"><?php esc_html_e('Subscribe','single-product-customizer'); ?></a>
+                            <strong><span class="dashicons dashicons-youtube"></span> <?php esc_html_e('YouTube:','single-product-customizer'); ?></strong> <a href="https://www.youtube.com/@WebCartisan" target="_blank"><?php esc_html_e('Subscribe','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('Check out our YouTube channel for video tutorials and product showcases.','single-product-customizer'); ?></p>
                         </div>
                         <div class="support-item">
                             <strong><span class="dashicons dashicons-instagram"></span> <?php esc_html_e('Instagram:','single-product-customizer'); ?></strong>
-                            <a href="https://www.instagram.com/wooxpertollc" target="_blank"><?php esc_html_e('Follow us','single-product-customizer'); ?></a>
+                            <a href="https://www.instagram.com/webcartisan/" target="_blank"><?php esc_html_e('Follow us','single-product-customizer'); ?></a>
                             <p><?php esc_html_e('See behind-the-scenes content and our latest updates on Instagram.','single-product-customizer'); ?></p>
                         </div>
                     </div>

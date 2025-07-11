@@ -227,7 +227,7 @@ function sppcfw_send_admin_notification_callback() {
 
     // Set email recipient, subject, and message
     $admin_email = get_option('admin_email');
-    $to_email = 'hello@wooxperto.com';
+    $to_email = 'hello@webcartisan.com';
     $subject = 'Plugin Feedback: Single Product Customizer';
     $email_message = 'A user provided the following feedback: ' . $feedback_message;
 
